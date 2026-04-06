@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Tracker Pro</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Bug 3: Slow resource – a large, unnecessary external script loaded synchronously -->
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+  <!-- Intentionally slow/heavy resource to illustrate a performance problem -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Task Tracker Pro</h1>
+    <!-- Bug 1: Broken image – path does not exist (404) -->
+    <img src="images/logo.svg" alt="App Logo" id="app-logo" />
+  </header>
+
+  <main>
+    <section class="add-task">
+      <input type="text" id="task-input" placeholder="Enter a new task…" />
+      <button id="add-btn">Add Task</button>
+    </section>
+
+    <!-- Bug 4: CSS overflow – the container has a fixed height with no overflow handling -->
+    <section class="task-list-container">
+      <ul id="task-list">
+        <li>Sample task 1</li>
+        <li>Sample task 2</li>
+        <li>Sample task 3</li>
+        <li>Sample task 4</li>
+        <li>Sample task 5</li>
+        <li>Sample task 6</li>
+        <li>Sample task 7</li>
+        <li>Sample task 8</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
